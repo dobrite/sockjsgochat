@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <title>sockschat ftw</title>
+    <script src="http://cdn.sockjs.org/sockjs-0.3.4.js" type="text/javascript"></script>
+    <script>
+    var sock = window.sock = new SockJS('http://localhost:8081/echo');
+    sock.onopen = function() {
+      console.log('open');
+    };
+    sock.onmessage = function(e) {
+      console.log('message', e.data);
+    };
+    sock.onclose = function() {
+      console.log('close');
+    };
+    </script>
+</head>
+<body>
+</body>
+</html>
