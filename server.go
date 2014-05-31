@@ -2,7 +2,6 @@ package main
 
 import (
 	"github.com/igm/sockjs-go/sockjs"
-	"io"
 	"io/ioutil"
 	"log"
 	"net/http"
@@ -23,10 +22,6 @@ func echoHandler(session sockjs.Session) {
 		}
 		break
 	}
-}
-
-func StaticServer(w http.ResponseWriter, req *http.Request) {
-	io.WriteString(w, "YO!\n")
 }
 
 func Index(w http.ResponseWriter, req *http.Request) {
